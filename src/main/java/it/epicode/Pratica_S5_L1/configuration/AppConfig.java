@@ -2,6 +2,7 @@ package it.epicode.Pratica_S5_L1.configuration;
 
 import it.epicode.Pratica_S5_L1.bean.Drink;
 import it.epicode.Pratica_S5_L1.bean.Pizza;
+import it.epicode.Pratica_S5_L1.bean.Tavolo;
 import it.epicode.Pratica_S5_L1.bean.Topping;
 import it.epicode.Pratica_S5_L1.enumeration.TipoDrink;
 import org.springframework.context.annotation.Bean;
@@ -52,5 +53,14 @@ public class AppConfig {
         pizza.setCalorie(800);
         pizza.setToppings(List.of(getTomato(), getMozzarella()));
         return pizza;
+    }
+
+    @Bean(name = "tavolo1")
+    public Tavolo tavolo1() {
+        Tavolo t = new Tavolo();
+        t.setNumeroTavolo(5);
+        t.setNumeroCoperti(3);
+        t.setOccupato(true);
+        return t;
     }
 }

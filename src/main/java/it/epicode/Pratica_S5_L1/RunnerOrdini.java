@@ -30,10 +30,10 @@ public class RunnerOrdini implements CommandLineRunner {
         log.info("Costo coperto letto da properties: {}", costoCoperto);
 
         // Creazione tavolo
-        Tavolo tavolo = new Tavolo();
-        tavolo.setNumeroTavolo(5);
-        tavolo.setNumeroCoperti(3);
-        tavolo.setOccupato(true);
+        Tavolo tavolo1 = new Tavolo();
+        tavolo1.setNumeroTavolo(5);
+        tavolo1.setNumeroCoperti(3);
+        tavolo1.setOccupato(true);
 
         // Creazione prodotti (esempio semplice)
         Pizza pizza = new Pizza();
@@ -48,7 +48,7 @@ public class RunnerOrdini implements CommandLineRunner {
         Ordini ordine = new Ordini();
         ordine.setNumeroOrdine(1);
         ordine.setProdottiOrdinati(List.of(pizza, drink));
-        ordine.setTavolo(tavolo);
+        ordine.setTavolo(tavolo1);
         ordine.setStratoOrdine(StatoOrdine.IN_CORSO);
         ordine.setOraDiAcquisizione(LocalDateTime.now());
 
@@ -56,7 +56,7 @@ public class RunnerOrdini implements CommandLineRunner {
         double totale = ordine.calcolaTotale(costoCoperto);
 
         // Stampa con logger
-        log.info("Ordine n. {} per tavolo {}:", ordine.getNumeroOrdine(), tavolo.getNumeroTavolo());
+        log.info("Ordine n. {} per tavolo {}:", ordine.getNumeroOrdine(), tavolo1.getNumeroTavolo());
         log.info("Prodotti ordinati: {}", ordine.getProdottiOrdinati());
         log.info("Totale (prodotti + coperti): € {}", totale);
     }
